@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_forecast_app/model/weather_forecast_model.dart';
 import 'package:weather_forecast_app/network/network.dart';
+import 'package:weather_forecast_app/ui/mid_view.dart';
 
 class WeatherForecast extends StatefulWidget {
   const WeatherForecast({Key? key}) : super(key: key);
@@ -37,7 +38,11 @@ class _WeatherForecastState extends State<WeatherForecast> {
              future: forecastObject,
              builder: (context, AsyncSnapshot<WeatherForecastModel> snapshot) {
                if(snapshot.hasData){
-                 return Text("All good!");
+                 return Column(
+                   children: [
+                     midView(snapshot),
+                   ],
+                 );
                }else{
                  return Container(
                    alignment: Alignment.center,
