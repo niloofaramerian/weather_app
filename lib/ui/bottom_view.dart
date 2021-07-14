@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:weather_forecast_app/model/weather_forecast_model.dart';
 
+import 'forecast_card.dart';
+
 Widget bottomView(
     AsyncSnapshot<WeatherForecastModel> snapshot, BuildContext context) {
   var forecastList = snapshot.data!.list;
@@ -27,9 +29,10 @@ Widget bottomView(
                       gradient: LinearGradient(
                           colors: [Color(0xff9661C3), Colors.white],
                           begin: Alignment.topLeft,
-                          end: Alignment.bottomRight),
+                          end: Alignment.bottomRight
+                      ),
                     ),
-                    // child: forecastCard(snapshot, index),
+                    child: forecastCard(snapshot, index),
                   ),
                 )),
       )
