@@ -17,6 +17,7 @@ class Network {
 
     if (response.statusCode == 200) {
       // we get the actual mapped model ( dart object )
+      print("Weather data: ${response.body}");
       return WeatherForecastModel.fromJson(json.decode(response.body));
     } else {
       throw Exception("Error getting weather forecast");
