@@ -28,7 +28,7 @@ Widget midView(AsyncSnapshot<WeatherForecastModel> snapshot) {
             style: TextStyle(fontSize: 15),
           ),
           SizedBox(height: 10),
-          getWeatherIcon(forecastList![0]!.weather![0].main!, Colors.pinkAccent, 198),
+          getWeatherIcon(forecastList[0].weather![0].main!, Colors.pinkAccent, 198),
           Padding(
             padding:
                 const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
@@ -36,13 +36,13 @@ Widget midView(AsyncSnapshot<WeatherForecastModel> snapshot) {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "${forecastList![0]!.temp!.day!.toStringAsFixed(0)} °F",
+                  "${forecastList[0].temp!.day!.toStringAsFixed(0)} °F",
                   style: TextStyle(
                     fontSize: 34,
                   ),
                 ),
                 Text(
-                    "${forecastList![0]!.weather![0].description!.toUpperCase()}"),
+                    "${forecastList[0].weather![0].description!.toUpperCase()}"),
               ],
             ),
           ),
@@ -58,7 +58,7 @@ Widget midView(AsyncSnapshot<WeatherForecastModel> snapshot) {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                          "${forecastList![0]!.speed!.toStringAsFixed(1)} mi/h"),
+                          "${forecastList[0].speed!.toStringAsFixed(1)} mi/h"),
                       Icon(
                         FontAwesomeIcons.wind,
                         size: 20,
@@ -73,7 +73,7 @@ Widget midView(AsyncSnapshot<WeatherForecastModel> snapshot) {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                          "${forecastList![0]!.humidity!.toStringAsFixed(0)} %"),
+                          "${forecastList[0].humidity!.toStringAsFixed(0)} %"),
                       Icon(
                         FontAwesomeIcons.solidGrinBeamSweat,
                         size: 20,
@@ -87,7 +87,7 @@ Widget midView(AsyncSnapshot<WeatherForecastModel> snapshot) {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("${forecastList![0]!.temp!.max!.toStringAsFixed(0)} °F"),
+                      Text("${forecastList[0].temp!.max!.toStringAsFixed(0)} °F"),
                       Icon(
                         FontAwesomeIcons.temperatureHigh,
                         size: 20,

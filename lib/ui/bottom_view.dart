@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_forecast_app/model/weather_forecast_model.dart';
 
-import 'forecast_card.dart';
-
 Widget bottomView(
     AsyncSnapshot<WeatherForecastModel> snapshot, BuildContext context) {
   var forecastList = snapshot.data!.list;
@@ -18,9 +16,7 @@ Widget bottomView(
         height: 170,
         padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
         child: ListView.separated(
-            separatorBuilder: (context, index) => SizedBox(
-                  width: 8,
-                ),
+            separatorBuilder: (context, index) => SizedBox(width: 8),
             itemCount: forecastList!.length,
             itemBuilder: (context, index) => ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
