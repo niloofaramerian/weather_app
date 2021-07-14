@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:weather_forecast_app/model/weather_forecast_model.dart';
 import 'package:weather_forecast_app/util/forecast_util.dart';
 
@@ -14,6 +15,7 @@ Widget midView(AsyncSnapshot<WeatherForecastModel> snapshot) {
       padding: const EdgeInsets.all(14.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             "$city, $country",
@@ -26,8 +28,9 @@ Widget midView(AsyncSnapshot<WeatherForecastModel> snapshot) {
           ),
           SizedBox(height: 10),
           Icon(
-            Icons.wb_sunny,
-            size: 195,
+            FontAwesomeIcons.cloud,
+            size: 198,
+            color: Colors.pinkAccent,
           ),
           Padding(
             padding:
@@ -60,7 +63,7 @@ Widget midView(AsyncSnapshot<WeatherForecastModel> snapshot) {
                       Text(
                           "${forecastList![0]!.speed!.toStringAsFixed(1)} mi/h"),
                       Icon(
-                        Icons.arrow_forward,
+                        FontAwesomeIcons.wind,
                         size: 20,
                         color: Colors.brown,
                       )
@@ -75,7 +78,7 @@ Widget midView(AsyncSnapshot<WeatherForecastModel> snapshot) {
                       Text(
                           "${forecastList![0]!.humidity!.toStringAsFixed(0)} %"),
                       Icon(
-                        Icons.hot_tub,
+                        FontAwesomeIcons.solidGrinBeamSweat,
                         size: 20,
                         color: Colors.brown,
                       )
@@ -89,7 +92,7 @@ Widget midView(AsyncSnapshot<WeatherForecastModel> snapshot) {
                     children: [
                       Text("${forecastList![0]!.temp!.max} °F"),
                       Icon(
-                        Icons.wb_sunny,
+                        FontAwesomeIcons.temperatureHigh,
                         size: 20,
                         color: Colors.brown,
                       )
