@@ -18,7 +18,7 @@ class _WeatherForecastState extends State<WeatherForecast> {
   @override
   void initState() {
     super.initState();
-    forecastObject = Network().getWeatherForecast(cityName: _cityName);
+    forecastObject = getWeather(_cityName);
     /// when we print forecastObject because it type is futureType is may be initialize or not
     /// and we use then that say when it initialize then print.
     forecastObject.then((value) => {
@@ -69,9 +69,15 @@ class _WeatherForecastState extends State<WeatherForecast> {
           contentPadding: EdgeInsets.all(8.0)
         ),
         onSubmitted: (value) {
-
+          setState(() {
+            _cityName = value;
+            forecastObject = getWeather(_cityName);
+          });
         },
       ),
     );
   }
+
+  Future<WeatherForecastModel> getWeather(String cityName) => Network().getWeatherForecast(cityName: _cityName);
+
 }
