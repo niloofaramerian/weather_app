@@ -60,22 +60,25 @@ class _WeatherForecastState extends State<WeatherForecast> {
   }
 
   Widget _textFiledView() {
-    return Container(
-      child: TextField(
-        decoration: InputDecoration(
-          hintText: "Enter City Name",
-          prefixIcon: Icon(Icons.search),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10)
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        child: TextField(
+          decoration: InputDecoration(
+            hintText: "Enter City Name",
+            prefixIcon: Icon(Icons.search),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10)
+            ),
+            contentPadding: EdgeInsets.all(8.0)
           ),
-          contentPadding: EdgeInsets.all(8.0)
+          onSubmitted: (value) {
+            setState(() {
+              _cityName = value;
+              forecastObject = getWeather(_cityName);
+            });
+          },
         ),
-        onSubmitted: (value) {
-          setState(() {
-            _cityName = value;
-            forecastObject = getWeather(_cityName);
-          });
-        },
       ),
     );
   }

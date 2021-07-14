@@ -4,8 +4,8 @@ import 'package:weather_forecast_app/model/weather_forecast_model.dart';
 
 import 'forecast_card.dart';
 
-Widget bottomView(
-    AsyncSnapshot<WeatherForecastModel> snapshot, BuildContext context) {
+Widget bottomView(AsyncSnapshot<WeatherForecastModel> snapshot,
+    BuildContext context) {
   var forecastList = snapshot.data!.list;
 
   return Column(
@@ -22,10 +22,14 @@ Widget bottomView(
             scrollDirection: Axis.horizontal,
             separatorBuilder: (context, index) => SizedBox(width: 8),
             itemCount: forecastList!.length,
-            itemBuilder: (context, index) => ClipRRect(
+            itemBuilder: (context, index) =>
+                ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   child: Container(
-                    width: MediaQuery.of(context).size.width / 2.7,
+                    width: MediaQuery
+                        .of(context)
+                        .size
+                        .width / 2.5,
                     height: 160,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
