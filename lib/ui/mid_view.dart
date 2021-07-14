@@ -42,8 +42,60 @@ Widget midView(AsyncSnapshot<WeatherForecastModel> snapshot) {
                   ),
                 ),
                 Text(
-                  "${forecastList![0]!.weather![0].description!.toUpperCase()}"
+                    "${forecastList![0]!.weather![0].description!.toUpperCase()}"),
+              ],
+            ),
+          ),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                          "${forecastList![0]!.speed!.toStringAsFixed(1)} mi/h"),
+                      Icon(
+                        Icons.arrow_forward,
+                        size: 20,
+                        color: Colors.brown,
+                      )
+                    ],
+                  ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                          "${forecastList![0]!.humidity!.toStringAsFixed(0)} %"),
+                      Icon(
+                        Icons.hot_tub,
+                        size: 20,
+                        color: Colors.brown,
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("${forecastList![0]!.temp!.max} °F"),
+                      Icon(
+                        Icons.wb_sunny,
+                        size: 20,
+                        color: Colors.brown,
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           )
