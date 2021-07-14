@@ -11,7 +11,7 @@ class WeatherForecastModel {
   WeatherForecastModel.fromJson(Map<String, dynamic> json) {
     city = json['city'] != null ? new City.fromJson(json['city']) : null;
     cod = json['cod'];
-    message = json['message'];
+    message = json['message'].toDouble();
     cnt = json['cnt'];
     if (json['list'] != null) {
       list = <Lista>[];
@@ -82,8 +82,8 @@ class Coord {
   Coord({this.lon, this.lat});
 
   Coord.fromJson(Map<String, dynamic> json) {
-    lon = json['lon'];
-    lat = json['lat'];
+    lon = json['lon'].toDouble();
+    lat = json['lat'].toDouble();
   }
 
   Map<String, dynamic> toJson() {
@@ -140,7 +140,7 @@ class Lista {
         weather!.add(new Weather.fromJson(v));
       });
     }
-    speed = json['speed'];
+    speed = json['speed'].toDouble();
     deg = json['deg'];
     clouds = json['clouds'];
     snow = json['snow'];

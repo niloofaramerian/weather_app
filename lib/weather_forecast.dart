@@ -28,8 +28,44 @@ class _WeatherForecastState extends State<WeatherForecast> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Forecast"),
+     body: ListView(
+       children: [
+         _textFiledView(),
+         Container(
+           /// We can pass "FutureBuilder<WeatherForecastModel>"
+           child: FutureBuilder(
+             future: forecastObject,
+             builder: (context, AsyncSnapshot<WeatherForecastModel> snapshot) {
+               if(snapshot.hasData){
+                 return Text("All good!");
+               }else{
+                 return Container(
+                   alignment: Alignment.center,
+                   child: CircularProgressIndicator(),
+                 );
+               }
+             },
+           ),
+         )
+       ],
+     ),
+    );
+  }
+
+  Widget _textFiledView() {
+    return Container(
+      child: TextField(
+        decoration: InputDecoration(
+          hintText: "Enter City Name",
+          prefixIcon: Icon(Icons.search),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10)
+          ),
+          contentPadding: EdgeInsets.all(8.0)
+        ),
+        onSubmitted: (value) {
+
+        },
       ),
     );
   }
