@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:weather_forecast_app/model/weather_forecast_model.dart';
+import 'package:weather_forecast_app/util/convert_icon.dart';
 import 'package:weather_forecast_app/util/forecast_util.dart';
 
 Widget midView(AsyncSnapshot<WeatherForecastModel> snapshot) {
@@ -27,11 +28,7 @@ Widget midView(AsyncSnapshot<WeatherForecastModel> snapshot) {
             style: TextStyle(fontSize: 15),
           ),
           SizedBox(height: 10),
-          Icon(
-            FontAwesomeIcons.cloud,
-            size: 198,
-            color: Colors.pinkAccent,
-          ),
+          getWeatherIcon(forecastList![0]!.weather![0].main!, Colors.pinkAccent, 198),
           Padding(
             padding:
                 const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
