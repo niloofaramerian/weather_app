@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:weather_forecast_app/model/weather_forecast_model.dart';
 
 import 'forecast_card.dart';
@@ -18,6 +19,7 @@ Widget bottomView(
         height: 170,
         padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
         child: ListView.separated(
+            scrollDirection: Axis.horizontal,
             separatorBuilder: (context, index) => SizedBox(width: 8),
             itemCount: forecastList!.length,
             itemBuilder: (context, index) => ClipRRect(
