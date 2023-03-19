@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../data/utils/enums/nav_bar.dart';
-import '../../logic/cubit/bottom_nav_bar_cubit.dart';
+import '../../logic/cubit/bottom_nav_bar/bottom_nav_bar_cubit.dart';
 import '../resources/app_colors.dart';
 
 class BottomNavBar extends StatelessWidget {
