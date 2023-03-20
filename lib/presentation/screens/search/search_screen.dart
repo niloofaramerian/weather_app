@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../data/repository/weather_repository.dart';
 import '../../../logic/bloc/search_weather/search_weather_bloc.dart';
 import '../../resources/app_dimensions.dart';
-import '../../resources/app_icons.dart';
 import '../../resources/app_text_theme.dart';
 import '../../widgets/ball_spin_fade_loading.dart';
 import '../../widgets/current_weather.dart';
@@ -12,6 +11,7 @@ import '../../widgets/daily_weathers.dart';
 import '../../widgets/failure.dart';
 import 'components/empty_search.dart';
 import 'components/not_found.dart';
+import 'components/search_text_field.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -31,17 +31,7 @@ class _SearchScreenState extends State<SearchScreen> {
       ),
       child: Column(
         children: [
-          Padding(
-            padding: padding12,
-            child: TextField(
-              controller: controller,
-              decoration: const InputDecoration(
-                prefixIcon: searchIcon,
-                hintText: 'Search city name',
-              ),
-              onSubmitted: (value) => _search(),
-            ),
-          ),
+          SearchTextField(controller: controller),
           BlocBuilder<SearchWeatherBloc, SearchWeatherState>(
               builder: (context, state) {
             if (state is SearchWeatherLoading) {
