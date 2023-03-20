@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_app/data/utils/extensions/int_extension.dart';
 
-import '../../../../data/models/weather.dart';
-import '../../../resources/app_colors.dart';
-import '../../../resources/app_dimensions.dart';
-import '../../../resources/app_text_theme.dart';
-import '../../../widgets/weather_icon.dart';
+import '../../data/models/daily_weather.dart';
+import '../resources/app_colors.dart';
+import '../resources/app_dimensions.dart';
+import '../resources/app_text_theme.dart';
+import 'weather_icon.dart';
 
-class DailyWeather extends StatelessWidget {
-  const DailyWeather({Key? key, required this.items}) : super(key: key);
+class DailyWeathers extends StatelessWidget {
+  const DailyWeathers({Key? key, required this.items}) : super(key: key);
 
-  final List<Daily> items;
+  final List<DailyWeather> items;
 
   @override
   Widget build(BuildContext context) {

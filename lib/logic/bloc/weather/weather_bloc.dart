@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
 
-import '../../../data/models/weather.dart';
+import '../../../data/models/current_location_weather.dart';
 import '../../../data/repository/weather_repository.dart';
 
 part 'weather_event.dart';
@@ -23,7 +23,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     Emitter<WeatherState> emit,
   ) async {
     try {
-      final response = await repository.fetchWeather(position: event.position);
+      final response = await repository.fetchCurrentLocationWeather(position: event.position);
       emit(WeatherSuccess(response));
     } catch (e) {
       emit(WeatherFailure('$e'));

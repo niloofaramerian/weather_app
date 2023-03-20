@@ -3,7 +3,7 @@ import 'package:line_icons/line_icons.dart';
 
 enum NavBar {
   home,
-  weatherSearch,
+  search,
   settings,
 }
 
@@ -12,7 +12,7 @@ extension NavBarExtension on NavBar {
     switch (this) {
       case NavBar.home:
         return LineIcons.home;
-      case NavBar.weatherSearch:
+      case NavBar.search:
         return LineIcons.search;
       case NavBar.settings:
         return LineIcons.cog;

@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           title: 'Weather Forecast',
           theme: appTheme,
+          debugShowCheckedModeBanner: false,
           onGenerateRoute: RouteGenerator.generateRoute,
         ),
       ),

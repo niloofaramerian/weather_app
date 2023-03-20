@@ -8,9 +8,10 @@ class WeatherProvider {
 
   factory WeatherProvider() => _instance;
 
-  final apiKey = 'ed60fcfbd110ee65c7150605ea8aceea';
+  final apiKey = 'Paste Your API Key Here';
 
-  Future<Response> fetchWeather({required Position position}) async {
+  Future<Response> fetchCurrentLocationWeather(
+      {required Position position}) async {
     try {
       final response = await Dio().get(
         'https://api.openweathermap.org/data/2.5/onecall',
@@ -21,6 +22,18 @@ class WeatherProvider {
           'exclude': 'minutely,current',
           'appid': apiKey
         },
+      );
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<Response> searchWeather({required String city}) async {
+    try {
+      final response = await Dio().get(
+        'https://api.openweathermap.org/data/2.5/forecast/daily',
+        queryParameters: {'q': city, 'appid': apiKey},
       );
       return response;
     } catch (e) {

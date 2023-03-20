@@ -2,17 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:weather_app/data/models/daily_weather.dart';
 
-import '../../../../data/models/weather.dart';
-import '../../../resources/app_colors.dart';
-import '../../../resources/app_dimensions.dart';
-import '../../../resources/app_text_theme.dart';
-import '../../../widgets/weather_icon.dart';
+import '../resources/app_colors.dart';
+import '../resources/app_dimensions.dart';
+import '../resources/app_text_theme.dart';
+import 'weather_icon.dart';
 
 class CurrentWeather extends StatelessWidget {
-  const CurrentWeather({Key? key, required this.weather}) : super(key: key);
+  const CurrentWeather({
+    Key? key,
+    required this.weather,
+    this.showWindInfo = true,
+  }) : super(key: key);
 
-  final Daily weather;
+  final DailyWeather weather;
+  final bool showWindInfo;
 
   @override
   Widget build(BuildContext context) {
@@ -66,22 +71,27 @@ class CurrentWeather extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  showWindInfo ?
                   _WeatherInfo(
                     iconData: CupertinoIcons.wind,
                     title: 'wind',
-                    subTitle: '${weather.windSpeed!.round()} m/s',
+                    subTitle: '${weather.windSpeed?.round()} m/s',
+                  ) : _WeatherInfo(
+                    iconData: Icons.timer_outlined,
+                    title: 'Pressure',
+                    subTitle: '${weather.pressure?.round()} hPa',
                   ),
                   const VerticalDivider(),
                   _WeatherInfo(
                     iconData: Icons.water_drop_outlined,
                     title: 'Humidity',
-                    subTitle: '${weather.humidity!.round()} %',
+                    subTitle: '${weather.humidity?.round()} %',
                   ),
                   const VerticalDivider(),
                   _WeatherInfo(
                     iconData: CupertinoIcons.cloud_rain,
                     title: 'Rain',
-                    subTitle: '${weather.rain!.round()} mm/h',
+                    subTitle: '${weather.rain?.round()} mm/h',
                   ),
                 ],
               ),

@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_bloc: ^8.1.2
+  bloc_concurrency: ^0.2.1
   line_icons: ^2.0.1
   dio: ^5.0.3
   geolocator: ^9.0.2
@@ -70,6 +71,7 @@ flutter:
   assets:
     - images/
     - images/weather_icon/
+    - images/empty_state/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

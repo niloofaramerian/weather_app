@@ -17,7 +17,7 @@ class BottomNavBar extends StatelessWidget {
           return Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             mainAxisSize: MainAxisSize.min,
-            children: [NavBar.home, NavBar.weatherSearch, NavBar.settings]
+            children: [NavBar.home, NavBar.search, NavBar.settings]
                 .map((item) => InkWell(
                       onTap: () {
                         context

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/data/utils/extensions/int_extension.dart';
 
-import '../../../../data/models/weather.dart';
+import '../../../../data/models/current_location_weather.dart';
 import '../../../resources/app_dimensions.dart';
 import '../../../resources/app_text_theme.dart';
 import '../../../widgets/weather_icon.dart';

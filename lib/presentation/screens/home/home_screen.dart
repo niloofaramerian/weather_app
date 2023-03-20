@@ -9,8 +9,8 @@ import '../../resources/app_icons.dart';
 import '../../resources/app_text_theme.dart';
 import '../../widgets/ball_spin_fade_loading.dart';
 import '../../widgets/failure.dart';
-import 'components/current_weather.dart';
-import 'components/daily_weather.dart';
+import '../../widgets/current_weather.dart';
+import '../../widgets/daily_weathers.dart';
 import 'components/hourly_weather.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -99,7 +99,7 @@ class _WeatherForecast extends StatelessWidget {
                   child: Text('Next 7 days', style: headlineLarge),
                 ),
                 sizedBoxH8,
-                DailyWeather(items: state.response.daily!.sublist(1, 8)),
+                DailyWeathers(items: state.response.daily!.sublist(1, 8)),
                 sizedBoxH60,
               ],
             ),

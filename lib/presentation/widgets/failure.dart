@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/data/utils/constants.dart';
 
 import '../resources/app_dimensions.dart';
 
@@ -21,14 +20,14 @@ class Failure extends StatelessWidget {
         children: [
           sizedBoxH8,
           Image.asset(
-            'images/location.png',
-            width: 200,
-            height: 200,
+            'images/empty_state/no_gps.png',
+            width: MediaQuery.of(context).size.width / 1.2,
+            fit: BoxFit.fill,
           ),
           Text(message),
           TextButton(
             onPressed: onPress,
-            child: const Text(tryAgain),
+            child: const Text("try again"),
           )
         ],
       ),

@@ -1,4 +1,4 @@
 export 'home/home_screen.dart';
 export 'main_screen.dart';
-export 'settings_screen.dart';
-export 'weather_search_screen.dart';
+export 'settings/settings_screen.dart';
+export 'search/search_screen.dart';

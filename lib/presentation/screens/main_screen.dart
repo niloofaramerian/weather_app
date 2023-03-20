@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/data/utils/enums/nav_bar.dart';
-import 'package:weather_app/logic/cubit/bottom_nav_bar/bottom_nav_bar_cubit.dart';
 
+import '../../logic/cubit/bottom_nav_bar/bottom_nav_bar_cubit.dart';
 import '../resources/app_colors.dart';
 import '../resources/app_dimensions.dart';
 import '../widgets/bottom_nav_bar.dart';
@@ -10,7 +10,7 @@ import 'screens.dart';
 
 final _screens = {
   NavBar.home: const HomeScreen(),
-  NavBar.weatherSearch: const WeatherSearchScreen(),
+  NavBar.search: const SearchScreen(),
   NavBar.settings: const SettingsScreen(),
 };
 
