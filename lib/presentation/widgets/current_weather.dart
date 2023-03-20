@@ -75,23 +75,23 @@ class CurrentWeather extends StatelessWidget {
                   _WeatherInfo(
                     iconData: CupertinoIcons.wind,
                     title: 'wind',
-                    subTitle: '${weather.windSpeed?.round()} m/s',
+                    subTitle: '${(weather.windSpeed ?? 0).round()} m/s',
                   ) : _WeatherInfo(
                     iconData: Icons.timer_outlined,
                     title: 'Pressure',
-                    subTitle: '${weather.pressure?.round()} hPa',
+                    subTitle: '${(weather.pressure ?? 0).round()} hPa',
                   ),
                   const VerticalDivider(),
                   _WeatherInfo(
                     iconData: Icons.water_drop_outlined,
                     title: 'Humidity',
-                    subTitle: '${weather.humidity?.round()} %',
+                    subTitle: '${(weather.humidity ?? 0).round()} %',
                   ),
                   const VerticalDivider(),
                   _WeatherInfo(
                     iconData: CupertinoIcons.cloud_rain,
                     title: 'Rain',
-                    subTitle: '${weather.rain?.round()} mm/h',
+                    subTitle: '${(weather.rain ?? 0).round()} mm/h',
                   ),
                 ],
               ),
