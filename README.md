@@ -1,16 +1,29 @@
-# weather_app
+# Weather Forecast App
 
-A new Flutter project.
+Weather Forecast Application created using [OpenWeatherMap](https://openweathermap.org/) API in [Flutter](https://flutter.dev/) with [BLoC Pattern](https://pub.dev/packages/flutter_bloc).
 
-## Getting Started
+<p align="center"><img src="https://user-images.githubusercontent.com/69586214/227187851-911c67b6-0a97-44fb-a392-0cb85edbdbc7.png" /></p>
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 💫 Features
+- Beautiful UI design
+- Automatically determine current user location
+- Today weather info
+- Weather forecast for 7 days
+- Search location
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## 💻 How to Run
+1. Create an account at [OpenWeatherMap](https://openweathermap.org/).
+2. Get your API key from https://home.openweathermap.org/api_keys.
+3. Clone the repository
+4. Install all the packages by typing
+   ```sh
+   flutter pub get
+   ```
+5. Navigate to **lib/data/provider/weather_provider.dart** and paste your API key to the apiKey variable
+   ```dart
+   final apiKey = 'Paste Your API Key Here';
+   ```
+6. Run the App
