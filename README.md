@@ -7,7 +7,7 @@ Weather Forecast Application created using [OpenWeatherMap](https://openweatherm
 
 
 ## 💫 Features
-- Beautiful UI design
+- [Beautiful UI design](https://dribbble.com/shots/21001096-Weather-Forecast-App)
 - Automatically determine current user location
 - Today weather info
 - Weather forecast for 7 days
